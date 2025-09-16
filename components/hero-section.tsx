@@ -68,14 +68,9 @@ export function HeroSection() {
             <div className="absolute inset-0 bg-black/20 z-20" />
 
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-30 px-4 py-4 md:py-8 lg:py-12">
-              {slide.topNav && (
-                <div className="absolute top-16 md:top-20 lg:top-24 left-0 right-0 text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-white tracking-wider bg-black/30 py-2 px-4 rounded">
-                    {slide.topNav}
-                  </div>
-                </div>
-              )}
+             
 
+              {/* ✅ Slide Content */}
               <div
                 className={`text-center px-4 ${
                   slide.id === 3 ? "mr-auto ml-8 md:ml-16 text-left max-w-2xl" : slide.id === 4 ? "mt-8 md:mt-16" : ""
@@ -84,7 +79,7 @@ export function HeroSection() {
                 <h1
                   className={`font-black tracking-tight leading-tight mb-4 text-white drop-shadow-lg ${
                     slide.id === 1
-                      ? "text-4xl md:text-6xl lg:text-7xl" // increased from text-2xl md:text-4xl lg:text-5xl
+                      ? "text-4xl md:text-6xl lg:text-7xl"
                       : slide.id === 2
                         ? "text-3xl md:text-5xl lg:text-6xl mt-8"
                         : slide.id === 3
@@ -98,8 +93,6 @@ export function HeroSection() {
                 {slide.id === 1 ? (
                   <div className="flex flex-col items-center">
                     <h2 className="font-black tracking-tight leading-tight drop-shadow-lg text-3xl md:text-5xl lg:text-6xl mb-2 text-white">
-                      {" "}
-                      {/* increased from text-xl md:text-3xl lg:text-4xl */}
                       {slide.subtitle}
                     </h2>
                     {slide.showLogo && slide.logoImage && (
@@ -144,8 +137,8 @@ export function HeroSection() {
                   <h3
                     className={`font-black tracking-tight leading-tight drop-shadow-lg ${
                       slide.id === 1
-                        ? "text-xl md:text-3xl lg:text-4xl text-white" // Changed from text-[#071d56] to text-white for better contrast
-                        : "text-2xl md:text-4xl lg:text-5xl text-white" // Changed from text-[#071d56] to text-white for better contrast
+                        ? "text-xl md:text-3xl lg:text-4xl text-white"
+                        : "text-2xl md:text-4xl lg:text-5xl text-white"
                     }`}
                   >
                     {slide.brand}
@@ -156,6 +149,7 @@ export function HeroSection() {
           </div>
         ))}
 
+        {/* ✅ Slide Dots */}
         <div className="absolute bottom-4 md:bottom-8 lg:bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-2 z-40">
           {slides.map((_, index) => (
             <button
